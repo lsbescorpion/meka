@@ -69,14 +69,14 @@
                 </li>
 
                 <li class="nav-item">
-                  <a href="/blog" class="nav-link">
+                  <a href="/blog" class="{{(Request::path() == 'blog' || Request::route()->getName() == 'viewBlog') ? 'btn btn-rose btn-raised btn-round' : 'nav-link'}}">
                       <i class="material-icons">comment</i> Blogs
                   </a>
                 </li>
 
                 @auth
                     <li class="nav-item">
-                      <a href="{{ route('listBlog') }}" class="nav-link">
+                      <a href="{{ route('listBlog') }}" class="{{Request::path() == 'listBlog' ? 'btn btn-rose btn-raised btn-round' : 'nav-link'}}">
                           <i class="material-icons">add_comment</i> Crear Blog
                       </a>
                     </li>
